@@ -1,24 +1,24 @@
 
 # Universal DayZ Loading Screen & Music Pack
-============================================
+
 This is a powerful, all-in-one mod template designed to give server owners complete control over their loading and main menu experience. It combines a highly customizable visual loading screen with a dynamic music player that works for both the main menu and in-game loading sequences.
 
 This project is built upon the robust scripts of the DayZ Expansion loading screen and has been generalized into a universal template that works on standard maps (Chernarus, Livonia) and includes overrides for special maps with their own loading screens (like Deer Isle).
 
 ## Features
 
-* *   **Custom Rotating Backgrounds:** Display a list of your own custom images that rotate on a timer during all loading and queue screens.
-*     
-* *   **Custom Hints & Text:** Configure a list of custom hints, server rules, or welcome messages that appear during loading.
-*     
-* *   **Custom Menu & Loading Music:** Add your own pool of `.ogg` music tracks that will play in the main menu and continue through the loading screen.
-*     
-* *   **Customizable Loading Bar Color:** Easily change the color of the loading progress bar to match your server's theme.
-*     
-* *   **Custom Logo:** Replace the default DayZ logo with your own server's logo.
-*     
-* *   **Universal Map Support:** Works automatically on standard maps and includes the necessary override to replace the loading screen on maps like Deer Isle.
-*     
+  *   **Custom Rotating Backgrounds:** Display a list of your own custom images that rotate on a timer during all loading and queue screens.
+     
+  *   **Custom Hints & Text:** Configure a list of custom hints, server rules, or welcome messages that appear during loading.
+     
+  *   **Custom Menu & Loading Music:** Add your own pool of `.ogg` music tracks that will play in the main menu and continue through the loading screen.
+     
+  *   **Customizable Loading Bar Color:** Easily change the color of the loading progress bar to match your server's theme.
+     
+  *   **Custom Logo:** Replace the default DayZ logo with your own server's logo.
+     
+  *   **Universal Map Support:** Works automatically on standard maps and includes the necessary override to replace the loading screen on maps like Deer Isle.
+     
 
 ## How to Use This Template
 
@@ -32,12 +32,12 @@ Using a text editor with a "Find and Replace in Files" feature (like VSCode), re
 
 ### Step 2: Adding Custom Images
 
-1. 1.  Convert your desired loading screen images to `.paa` or `.edds` format using DayZ Tools.
-1.     
-1. 2.  Place your image files inside the `/Images/` folder.
-1.     
-1. 3.  Open `/Scripts/Data/LoadingImages.json` and update the `ImagePath` for each entry to point to your new files. The path must start from the root of your mod folder.
-1.     
+   1.  Convert your desired loading screen images to `.paa` or `.edds` format using DayZ Tools.
+     
+   2.  Place your image files inside the `/Images/` folder.
+     
+   3.  Open `/Scripts/Data/LoadingImages.json` and update the `ImagePath` for each entry to point to your new files. The path must start from the root of your mod folder.
+     
 
 **Example `LoadingImages.json`:**
 
@@ -75,14 +75,14 @@ Open `/Scripts/Data/Hints.json` and edit the entries. `m_Headline` is the title 
 
 ### Step 4: Adding Custom Music
 
-1. 1.  Convert your music tracks to the **`.ogg`** format.
-1.     
-1. 2.  Place your `.ogg` files inside the `/music/` folder.
-1.     
-1. 3.  Open the main `config.cpp` file and navigate to the `CfgSoundShaders` section.
-1.     
-1. 4.  Update the `samples[]` array with the correct paths to your music files. The path must start with a backslash `\` followed by your mod's folder name.
-1.     
+   1.  Convert your music tracks to the **`.ogg`** format.
+     
+   2.  Place your `.ogg` files inside the `/music/` folder.
+     
+   3.  Open the main `config.cpp` file and navigate to the `CfgSoundShaders` section.
+        
+   4.  Update the `samples[]` array with the correct paths to your music files. The path must start with a backslash `\` followed by your mod's folder name.
+     
 
 **Example `config.cpp` music section:**
 
@@ -105,12 +105,12 @@ class CfgSoundShaders
 
 You can easily customize the loading bar color and logo by editing one script.
 
-1. 1.  Open `/Scripts/3_Game/LoadingScreen.c`.
-1.     
-1. 2.  Near the top of the file, find the `class LoadingPack_Data`.
-1.     
-1. 3.  Edit the default values to your liking.
-1.     
+   1.  Open `/Scripts/3_Game/LoadingScreen.c`.
+      
+   2.  Near the top of the file, find the `class LoadingPack_Data`.
+     
+   3.  Edit the default values to your liking.
+     
 
 **Example `LoadingScreen.c` customization:**
 
@@ -146,12 +146,12 @@ This almost always means the `ImagePath` in your `LoadingImages.json` is incorre
 
 ### My custom music isn't playing!
 
-* *   **Check `config.cpp`:** Ensure the filenames in the `CfgSoundShaders` section perfectly match your `.ogg` files in the `/music/` folder.
-*     
-* *   **Check the Path:** The path in `config.cpp` must start with a `\` (e.g., `\MyAwesomeServer_LoadingPack\music\track1.ogg`).
-*     
-* *   **File Format:** Make sure your music files are properly encoded as `.ogg`.
-*     
+ *   **Check `config.cpp`:** Ensure the filenames in the `CfgSoundShaders` section perfectly match your `.ogg` files in the `/music/` folder.
+     
+ *   **Check the Path:** The path in `config.cpp` must start with a `\` (e.g., `\MyAwesomeServer_LoadingPack\music\track1.ogg`).
+     
+ *   **File Format:** Make sure your music files are properly encoded as `.ogg`.
+     
 
 ### My mod doesn't seem to load at all.
 

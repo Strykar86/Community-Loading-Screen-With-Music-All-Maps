@@ -1,0 +1,58 @@
+FrameWidgetClass root_frame {
+ position 0 0
+ size 1 1
+ halign center_ref
+ valign center_ref
+ {
+  PanelWidgetClass PanelWidget1 {
+   position 0 0
+   size 1 1
+   halign center_ref
+   valign center_ref
+   {
+    // The background image our script will control
+    ImageWidgetClass ImageWidgetBackground {
+     position 0 0
+     size 1 1
+     halign center_ref
+     valign center_ref
+     fixaspect outside
+    }
+
+    // The loading bar our script will find and color
+    ProgressBarWidgetClass LoadingBar {
+     position 0 0.9
+     size 0.45 0.01
+     halign center_ref
+     valign bottom_ref
+    }
+
+    // The DayZ corner logo our script will find and replace/hide
+    ImageWidgetClass ImageLogoCorner {
+     position 10 10
+     size 128 128
+     valign bottom_ref
+     halign right_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+    }
+    
+    // An empty frame for the script to inject the hint panel into
+    FrameWidgetClass hint_frame {
+     position 0 0.38
+     size 0.8 0.5
+     halign center_ref
+     valign bottom_ref
+    }
+    
+    // A placeholder for the hint icon
+    ImageWidgetClass hintIcon
+    {
+        visible 0
+    }
+   }
+  }
+ }
+}
